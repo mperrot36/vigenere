@@ -56,6 +56,8 @@ def dechiffrement(texteEntrée: str, clé: str)->str:
             if ord(nouvelleLettre)<ord("a"):
                 nouvelleLettre=chr(ord(nouvelleLettre)+26)
             texteSortie+=nouvelleLettre
+            compteurClé=(compteurClé+1)%len(clé)
+            
         else:
             if lettre>="A" and lettre<="Z":
                 nouvelleLettre=chr(ord(lettre)-(ord(clé[compteurClé])-limite))
